@@ -33,7 +33,7 @@ module.exports = function (grunt) {
       },
       css:{
         src: ['src/<%= pkg.name %>.css'],
-        dest: 'dist/<%= pkg.name %>.js'
+        dest: 'dist/<%= pkg.name %>.css'
       }
     },
     uglify: {
