@@ -2,13 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>credimage Test Suite</title>
+    <title>Credimage Test Suite</title>
     <!-- Load local jQuery. -->
     <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <!-- Load local QUnit. -->
+    <link rel="stylesheet" href="../bower_components/qunit/qunit/qunit.css" media="screen">
+    <script src="../bower_components/qunit/qunit/qunit.js"></script>
     <!-- Load local lib and tests. -->
     <script src="../src/credimage.js"></script>
     <script src="credimage_test.js"></script>
     <link rel="stylesheet" href="../src/credimage.css" type="text/css">
+    <!-- Removing access to jQuery and $. But it'll still be available as _$, if
+you REALLY want to mess around with jQuery in the console. REMEMBER WE
+ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
     <style>
       body{
         background-color: #eeeeee;
@@ -52,6 +58,12 @@
     </style>
   </head>
   <body>
+    <div id="qunit"></div>
+    <div id="qunit-fixture">
+      <span>lame test markup</span>
+      <span>normal test markup</span>
+      <span>awesome test markup</span>
+    </div>
     <div class="container">
       <h1>Credimage</h1><hr>
       <h3>Spécifier l'auteur d'une image.</h3>
