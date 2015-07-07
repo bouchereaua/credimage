@@ -1,0 +1,64 @@
+/*
+* 
+* 
+*
+* Copyright (c) 2015 Aymeric Bouchereau
+* Licensed under the MIT license.
+*/
+.ci-box{
+  display: none;
+  position: absolute;
+  color: #fff;
+  background-color: #000;
+  opacity: .7;
+  padding: 5px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: opacity .1s, border-color .1s;
+}
+.ci-box:hover, .ci-box:focus{
+  opacity: 1;
+  border-color: #fff;
+}
+.ci-box span{
+  position: absolute;
+  margin-top: 32px;
+  margin-left: -96px;
+  color:#fff;
+  background:rgba(0,0,0,1);
+  padding:5px;
+  border-radius:5px;
+  box-shadow:0 0 2px rgba(0,0,0,.5);
+  transform:scale(0);
+  transition:all .25s;
+  opacity:0;
+  font-size: 10pt;
+  font-style: italic;
+  width: 170px;
+}
+.ci-box span:after{
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(0, 0, 0, 0);
+  border-bottom-color: #000000;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.ci-box span > a{
+  color: #fff;
+}
+.ci-box-hover{
+  transform:scale(1) !important;
+  opacity:1 !important;
+  cursor: auto;
+}
+.ci_img:hover+.ci-box, .ci-box:hover{
+  display: block;
+}

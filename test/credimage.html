@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>credimage Test Suite</title>
+    <!-- Load local jQuery. -->
+    <script src="../bower_components/jquery/dist/jquery.js"></script>
+    <!-- Load local lib and tests. -->
+    <script src="../src/credimage.js"></script>
+    <script src="credimage_test.js"></script>
+    <link rel="stylesheet" href="../src/credimage.css" type="text/css">
+    <style>
+      body{
+        background-color: #eeeeee;
+        font-family: "Helvetica",sans-serif;
+      }
+      .container{
+        width: 70%;
+        margin: auto;
+        background-color: #ffffff;
+        padding: 15px;
+      }
+      .center{
+        margin: auto;
+        text-align: center;
+      }
+      /* - */
+      .ci-div{
+        margin: auto;
+        margin-bottom: 8px;
+        height: 250px;
+        width: 250px;
+      }
+      #div-1{
+        width: 250px;
+        height: 250px;
+        background-image: url(img/640px-Robida_vingtieme_siecle_p275_1.jpg);
+        background-position: center center;
+      }
+      #div-2{
+        width: 380px;
+        height: 380px;
+        background-image: url(img/Robida_vingtieme_siecle_p235_1.jpg);
+        background-position: center center;
+      }
+      #div-3{
+        width: 150px;
+        height: 150px;
+        background-image: url(img/Robida_vingtieme_siecle_p469_1.jpg);
+        background-position: center center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Credimage</h1><hr>
+      <h3>Spécifier l'auteur d'une image.</h3>
+      <p>
+        Lorem Elsass ipsum nullam Coopé de Truchtersheim lacus leverwurscht sit ac mänele ante gravida in, aliquam barapli hop mollis placerat DNA, rucksack habitant sagittis tristique rossbolla et Racing. météor amet chambon gal picon bière geïz elit Wurschtsalad kuglopf dignissim hopla Chulien Salut bisamme ornare tellus geht's Spätzle schneck Richard Schirmeck sit eget suspendisse tellus libero. Huguette Morbi sit yeuh. Mauris Pellentesque libero, libero, Gal. merci vielmols Yo dû. bissame sed so kartoffelsalad dui hopla Carola knepfle ftomi! commodo porta jetz gehts los ac lotto-owe munster dolor wurscht rhoncus salu gewurztraminer sed Gal ! quam. non turpis, nüdle condimentum hopla purus amet, senectus Pfourtz ! Strasbourg leo Verdammi morbi wie flammekueche ullamcorper Hans adipiscing Salu bissame blottkopf, Chulia Roberstau vielmols, Miss Dahlias varius hopla schnaps ornare elementum hoplageiss und leo id, schpeck risus, pellentesque mamsell messti de Bischheim Heineken Christkindelsmärik auctor, amet Kabinetpapier bredele semper kougelhopf ch'ai quam, knack eleifend non consectetur réchime vulputate baeckeoffe Oberschaeffolsheim tchao bissame turpis s'guelt Oberschaeffolsheim id .
+      </p>
+      <div class="center">
+        <img src="img/Robida_vingtieme_siecle_p235_1.jpg" alt="Une premiere image" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p235_1.jpg" data-ci-license="Domaine public"/>
+        <img src="img/Robida_vingtieme_siecle_p469_1.jpg" alt="Une deuxieme image" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg"/>
+        <img src="img/Robida_vingtieme_siecle_p469_1.jpg" alt="Une deuxieme image" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg" data-ci-license="Domaine public"/>
+        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image" data-ci-license="Domaine public"/>
+        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image" data-ci-author="Albert Robida"/>
+        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image"/>
+      </div>
+      <hr>
+      <div class="center">
+        <div id="div-1" class="ci-div" data-ci-author="Albert Robida" data-ci-license="Domaine public"></div>
+
+        <div id="div-2" class="ci-div" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p235_1.jpg" data-ci-license="Domaine public"></div>
+
+        <div id="div-3" class="ci-div" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg" data-ci-license="Domaine public"></div>
+      </div>
+    </div>
+  </body>
+</html>
