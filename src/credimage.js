@@ -10,13 +10,10 @@
   var text = "&copy;";
   var countID = 0;
   var timeouts = [];
+  var margin = 15;
 
-  $.fn.credimage = function(options) {
-
-    var settings = $.extend({
-      margin:15,
-    },options);
-    
+  $.fn.credimage = function() {
+        
     function getImageRights(el){
       var res = "";
       var author = el.data("ci-author");
@@ -30,17 +27,20 @@
         else if(author !== undefined && link !== undefined){
           res = "by <a target='_blank' href='"+link+"'>"+author+"</a>";
         }
-        else if(author === undefined){
+        else if(author === undefined && link !== undefined){
           res = "<a target='_blank' href='"+link+"'>Source</a>";
         }
-        else if(link === undefined){
+        else if(link === undefined && author !== undefined){
           res = "by "+author;
+        }
+        else if(license !== undefined){
+          res = license;
         }
         else{
           res = 0;
         }
 
-        if(license !== undefined){res += " / "+license;}
+        if(license !== undefined && res !== license){res += " / "+license;}
       }
       else{
         res = 0;
@@ -66,8 +66,8 @@
         // Init credimage's box
         var box = "<div id='ci_b_"+countID+"' class='ci-box'>"+text+"<span>"+rights+"</span></div>";
         el.after(box);
-        var posXBox = positions.left + widthImage - settings.margin - $("#ci_b_"+countID).width();
-        var posYBox = positions.top + lengthImage - settings.margin - $("#ci_b_"+countID).height();
+        var posXBox = positions.left + widthImage - margin - $("#ci_b_"+countID).width();
+        var posYBox = positions.top + lengthImage - margin - $("#ci_b_"+countID).height();
         $("#ci_b_"+countID).css({
           top:posYBox+"px",
           left:posXBox+"px"
@@ -83,8 +83,8 @@
       elements.each(function(){
         var id = $(this).attr("id").substr(5);
         var img = $(".ci_img_"+id);
-        var posX = img.offset().left + img.width() - settings.margin - $(this).width();
-        var posY = img.offset().top + img.height() - settings.margin - $(this).height();
+        var posX = img.offset().left + img.width() - margin - $(this).width();
+        var posY = img.offset().top + img.height() - margin - $(this).height();
         $(this).css({
           top:posY+"px",
           left:posX+"px"
@@ -93,7 +93,7 @@
     });
     $(".ci-box").click(function(){
       var el = $(this);
-      if(el.children("span").css("opacity") === 0){
+      if(el.children("span").css("opacity") == 0){
         el.stop().css("opacity",1);
         $(".ci_img:hover+.ci-box, .ci-box:hover").css("display","block");
         el.children("span").stop().addClass("ci-box-hover");
@@ -102,6 +102,10 @@
         el.stop().css("opacity","");
         $(".ci_img:hover+.ci-box, .ci-box:hover").css("display","");
         el.children("span").stop().removeClass("ci-box-hover");
+        for(var i=0;i<timeouts.length;i++){
+          clearTimeout(timeouts[i]);
+        }
+        timeouts = [];
       }
     });
     $(".ci-box > span").mouseleave(function(){
@@ -135,8 +139,6 @@
       var lastTimeouts = timeouts.length-1;
       clearTimeout(lastTimeouts);
     });
-
-
     return this;
   }; 
 })( jQuery );

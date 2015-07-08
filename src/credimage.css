@@ -36,6 +36,7 @@
   font-size: 10pt;
   font-style: italic;
   width: 170px;
+  text-align: center;
 }
 .ci-box span:after{
   bottom: 100%;

@@ -20,71 +20,196 @@ ARE TESTING A PLUGIN HERE, THIS HELPS ENSURE BEST PRACTICES. REALLY. -->
         background-color: #eeeeee;
         font-family: "Helvetica",sans-serif;
       }
-      .container{
-        width: 70%;
-        margin: auto;
-        background-color: #ffffff;
-        padding: 15px;
+      .main{
+        background-color: #fff;
       }
-      .center{
-        margin: auto;
-        text-align: center;
+      .code{
+        font-family: monospace;
+        background-color: #eee;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      .container{
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-flex-wrap: nowrap;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+        -webkit-justify-content: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-align-content: center;
+        -ms-flex-line-pack: center;
+        align-content: center;
+        -webkit-align-items: flex-start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+      }
+      .flex-item{
+        margin: 20px;
+      }
+      .flex-item:nth-child(1) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+      }
+      .flex-item:nth-child(2) {
+        -webkit-order: 0;
+        -ms-flex-order: 0;
+        order: 0;
+        -webkit-flex: 0 1 auto;
+        -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+        -webkit-align-self: flex-start;
+        -ms-flex-item-align: start;
+        align-self: flex-start;
+      }
+      .flex-item:nth-child(2) p{
+        margin-top: 20px;
+      }
+      .main > div:nth-child(1){
+        padding: 15px;
+        margin-left: 10%;
+        margin-right: 10%;
       }
       /* - */
       .ci-div{
         margin: auto;
         margin-bottom: 8px;
-        height: 250px;
-        width: 250px;
-      }
-      #div-1{
-        width: 250px;
-        height: 250px;
-        background-image: url(img/640px-Robida_vingtieme_siecle_p275_1.jpg);
-        background-position: center center;
-      }
-      #div-2{
-        width: 380px;
-        height: 380px;
-        background-image: url(img/Robida_vingtieme_siecle_p235_1.jpg);
-        background-position: center center;
-      }
-      #div-3{
-        width: 150px;
-        height: 150px;
-        background-image: url(img/Robida_vingtieme_siecle_p469_1.jpg);
+        height: 215px;
+        width: 320px;
+        background-image: url(img/Tsunami_by_hokusai_19th_century.jpg);
         background-position: center center;
       }
     </style>
   </head>
   <body>
+<!--
     <div id="qunit"></div>
     <div id="qunit-fixture">
       <span>lame test markup</span>
       <span>normal test markup</span>
       <span>awesome test markup</span>
     </div>
-    <div class="container">
-      <h1>Credimage</h1><hr>
-      <h3>Spécifier l'auteur d'une image.</h3>
-      <p>
-        Lorem Elsass ipsum nullam Coopé de Truchtersheim lacus leverwurscht sit ac mänele ante gravida in, aliquam barapli hop mollis placerat DNA, rucksack habitant sagittis tristique rossbolla et Racing. météor amet chambon gal picon bière geïz elit Wurschtsalad kuglopf dignissim hopla Chulien Salut bisamme ornare tellus geht's Spätzle schneck Richard Schirmeck sit eget suspendisse tellus libero. Huguette Morbi sit yeuh. Mauris Pellentesque libero, libero, Gal. merci vielmols Yo dû. bissame sed so kartoffelsalad dui hopla Carola knepfle ftomi! commodo porta jetz gehts los ac lotto-owe munster dolor wurscht rhoncus salu gewurztraminer sed Gal ! quam. non turpis, nüdle condimentum hopla purus amet, senectus Pfourtz ! Strasbourg leo Verdammi morbi wie flammekueche ullamcorper Hans adipiscing Salu bissame blottkopf, Chulia Roberstau vielmols, Miss Dahlias varius hopla schnaps ornare elementum hoplageiss und leo id, schpeck risus, pellentesque mamsell messti de Bischheim Heineken Christkindelsmärik auctor, amet Kabinetpapier bredele semper kougelhopf ch'ai quam, knack eleifend non consectetur réchime vulputate baeckeoffe Oberschaeffolsheim tchao bissame turpis s'guelt Oberschaeffolsheim id .
-      </p>
-      <div class="center">
-        <img src="img/Robida_vingtieme_siecle_p235_1.jpg" alt="Une premiere image" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p235_1.jpg" data-ci-license="Domaine public"/>
-        <img src="img/Robida_vingtieme_siecle_p469_1.jpg" alt="Une deuxieme image" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg"/>
-        <img src="img/Robida_vingtieme_siecle_p469_1.jpg" alt="Une deuxieme image" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg" data-ci-license="Domaine public"/>
-        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image" data-ci-license="Domaine public"/>
-        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image" data-ci-author="Albert Robida"/>
-        <img src="img/640px-Robida_vingtieme_siecle_p275_1.jpg" alt="Une troisieme image"/>
+-->
+    <div class="main">
+      <div>
+        <div class="flex-item">
+          <h1>Credimage</h1>
+          <p>
+            Credimage lets you credit your pictures by pointing out the author, license and a link. 
+            It adds a copyrights zone on your pictures to warn users and visitors. This way, people will know what rights are associate with your pictures.3
+          </p>
+          <h2>Why ?</h2>
+          <p>
+            The main goal of Credimage is to inform and raise awareness of internet users on rights applied on numeric creations. Many licenses and rights may be applied on a picture. So, it's not so simple to understand how we can use and share it. In addition, there is no easy and efficient way to determine rights on a picture we just found on the internet.
+          </p>
+          <p>
+            That's why Credimage is born. It allows you to specify the author and the license of your pictures. Also, you can add a link : the URL where you found it.
+          </p>
+          <p>
+            Credimage is not a miracle solution, i think there is not, it's a new possibility.
+          </p>
+          <h2>Installation</h2>
+          <p>
+            First you have to retrieve the following files from the dist folder: credimage.css and jquery.credimage.min.css.
+            Then, include this files in your HTML page.
+          </p>
+          <p>
+            <strong>Example:</strong><br>
+              <div class="code">
+                &lt;script src="js/jquery.credimage.min.js"&gt;&lt;/script&gt;<br>
+                &lt;link rel="stylesheet" href="css/credimage.css" type="text/css"&gt;
+              </div>
+          </p>
+          <p>
+            Add some data-attributes (data-ci-author, data-ci-license and data-ci-link) on pictures you want to use Credimage (it works both on IMG tag and DIV tag). Of course, you have to fill the attributes.
+          </p>
+          <p>
+            <strong>Example:</strong><br>
+              <div class="code">
+                &lt;img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une premiere image" data-ci-author="Katsushika Hokusai" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg" data-ci-license="Domaine public"/&gt;<br>
+&lt;div id="div-5" class="ci-div" data-ci-author="Katsushika Hokusai"&gt;&lt;/div&gt;
+              </div>
+          </p>
+          <hr>
+          <p>
+            <strong>Remark:</strong> you do not have to add all the three attributes on a picture, it works as well with just one of them.
+          </p>
+          <hr>
+          <p>
+            Now, initialize the plugin and select on which elements you want to run it.
+          </p>
+          <p>
+            Warning! The initialization must be after the page has been loaded. Well, you can use onload event:
+          </p>
+          <p>
+            <strong>Example:</strong><br>
+            <div class="code">
+              $(window).load(function(){<br>
+                $(".container img").credimage();<br>
+              });
+            </div>
+          </p>
+          <h2>Bugs</h2>
+          <p>
+            With Chrome : if the plugin is launched before the page has been loaded, texts are misplacing. That's why you have to use an onload event.
+          </p>
+          <p>
+            Sudden closure of tooltips (not frequent).
+          </p>
+        </div>
       </div>
-      <hr>
-      <div class="center">
-        <div id="div-1" class="ci-div" data-ci-author="Albert Robida" data-ci-license="Domaine public"></div>
-
-        <div id="div-2" class="ci-div" data-ci-author="Albert Robida" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p235_1.jpg" data-ci-license="Domaine public"></div>
-
-        <div id="div-3" class="ci-div" data-ci-link="https://commons.wikimedia.org/wiki/File:Robida_vingtieme_siecle_p469_1.jpg" data-ci-license="Domaine public"></div>
+      <div class="container">
+        <div class="flex-item">
+          <h3>On IMG tag</h3>
+          <div class="center">
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une premiere image" data-ci-author="Katsushika Hokusai" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg" data-ci-license="Domaine public"/>
+            <p>Data attributes : Author, License, Link</p>
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une deuxieme image" data-ci-author="Katsushika Hokusai" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg"/>
+            <p>Data attributes : Author, Link</p>
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une deuxieme image" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg" data-ci-license="Domaine public"/>
+            <p>Data attributes : License, Link</p>
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une troisieme image" data-ci-license="Domaine public"/>
+            <p>Data attributes : License</p>
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une troisieme image" data-ci-author="Katsushika Hokusai"/>
+            <p>Data attributes : Author</p>
+            <img src="img/Tsunami_by_hokusai_19th_century.jpg" alt="Une troisieme image"/>
+            <p>Data attributes : none</p>
+          </div>
+        </div>
+        <div class="flex-item">
+          <h3>On DIV tag</h3>
+          <div class="center">
+            <div class="ci-div" data-ci-author="Katsushika Hokusai" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg" data-ci-license="Domaine public"></div>
+            <p>Data attributes : Author, License, Link</p>
+            <div class="ci-div" data-ci-author="Katsushika Hokusai" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg"></div>
+            <p>Data attributes : Author, Link</p>
+            <div class="ci-div" data-ci-link="https://commons.wikimedia.org/wiki/File:Tsunami_by_hokusai_19th_century.jpg" data-ci-license="Domaine public"></div>
+            <p>Data attributes : License, Link</p>
+            <div class="ci-div" data-ci-license="Domaine public"></div>
+            <p>Data attributes : License</p>
+            <div class="ci-div" data-ci-author="Katsushika Hokusai"></div>
+            <p>Data attributes : Author</p>
+            <div class="ci-div"></div>
+            <p>Data attributes : none</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex-item">
+          <h5>&copy; Aymeric Bouchereau - <a href="http://bouchereaua.net">bouchereaua.net</a> - <a href="https://twitter.com/BouchereauA">@BouchereauA</a></h5>
+        </div>
       </div>
     </div>
   </body>
